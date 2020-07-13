@@ -9,8 +9,12 @@
   "author": "Vahag Torosyan",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "eslint-config-node": "^4.1.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.9.24"
   },
   "devDependencies": {
     "eslint": "^7.4.0",
