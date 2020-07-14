@@ -1,5 +1,5 @@
 const express = require("express");
-const User = require("../../models/registrationUser");
+const User = require("../model/registrationModel");
 const app = express.Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -11,21 +11,21 @@ app.post("/", async (req, res) => {
   if (user === null) {
     return res.status(200).send({ msg: "Not found account" });
   }
-  dataUser.firstName = user.firstName;
-  dataUser.lastName = user.lastName;
-  dataUser.id = user.id;
+
   // hashavorvac passwordy stugum enq useri mutqagrac passwordin havasar e te voch
   await bcrypt.compare(password, user.password, (err, result) => {
     if (result) {
       jwt.sign({ user }, "secretkey", { expiresIn: "30s" }, (err, token) => {
         res.status(200).send({
           massege: "Auth successful",
+          firstName: user.firstName,
+          lastName: user.lastName,
           token: token,
           id: user.id,
         });
       });
     } else {
-      res.status(200).send({ msg: "Password error" });
+      res.status(200).send({ msg: "Password or Email error" });
     }
   });
 });
