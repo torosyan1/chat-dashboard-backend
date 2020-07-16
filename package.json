@@ -1,10 +1,10 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Vahag Torosyan",
   "license": "ISC",
@@ -23,5 +23,14 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "prettier": "^2.0.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torosyan1/chat-dashboard-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/torosyan1/chat-dashboard-backend/issues"
+  },
+  "homepage": "https://github.com/torosyan1/chat-dashboard-backend#readme",
+  "description": ""
 }
