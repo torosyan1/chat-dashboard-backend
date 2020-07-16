@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "node index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "npm run build && node server.js"
   },
   "author": "Vahag Torosyan",
   "license": "ISC",
