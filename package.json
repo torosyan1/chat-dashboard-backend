@@ -17,7 +17,8 @@
     "eslint-config-node": "^4.1.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.24"
+    "mongoose": "^5.9.24",
+    "pg": "^8.3.0"
   },
   "devDependencies": {
     "eslint": "^7.4.0",
