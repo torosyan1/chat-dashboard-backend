@@ -11,5 +11,5 @@ app.use("/registration", require("./API/registrationAPI"));
 app.use("/login", require("./API/loginAPI"));
 connectDB();
 
-const Port = process.env.Port || 5000;
-app.listen(Port, () => console.log("Server started ", `${Port}`));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log("Server started ", `${Port}`));
