@@ -12,4 +12,4 @@ app.use("/login", require("./API/loginAPI"));
 connectDB();
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log("Server started ", `${Port}`));
+app.listen(PORT, () => console.log("Server started ", `${PORT}`));
