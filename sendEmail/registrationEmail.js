@@ -1,5 +1,4 @@
 require("dotenv").config();
-
 const nodemailer = require("nodemailer");
 
 // Step 1
@@ -20,9 +19,13 @@ let mailOptions = {
 };
 
 // Step 3
-exports.sendEmail = transporter.sendMail(mailOptions, (err, data) => {
-  if (err) {
-    return console.log("Error occurs", err);
-  }
-  return console.log("Email sent!!!");
-});
+let sendMail = () => {
+  transporter.sendMail(mailOptions, (err, data) => {
+    if (err) {
+      return console.log("Error occurs", err);
+    }
+    return console.log("Email sent!!!");
+  });
+};
+
+module.exports = sendMail;
