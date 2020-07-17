@@ -48,7 +48,7 @@ app.post("/", async (req, res) => {
   user.email = email;
   user.password = await bcrypt.hash(password, salt);
   user.data = new Date();
-  let userModel = new newUser(user);
+  let userModel = new newUser(user); 
   SendEmail(); //nodeemailer
   await userModel.save();
   return res.status(200).json({ msg: "Successfull" });
