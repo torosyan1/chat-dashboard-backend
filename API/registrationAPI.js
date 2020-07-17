@@ -42,6 +42,7 @@ app.post("/", async (req, res) => {
     return res.status(200).json({ msg: "Have to put minimum 8 characters" });
   }
   let user = {};
+  await SendEmail.sendEmail();
   user.firstName = firstName;
   user.lastName = lastName;
   user.email = email;
@@ -49,7 +50,6 @@ app.post("/", async (req, res) => {
   user.data = new Date();
   let userModel = new newUser(user);
   await userModel.save();
-  SendEmail.sendEmail();
   return res.status(200).json({ msg: "Successfull" });
 });
 
