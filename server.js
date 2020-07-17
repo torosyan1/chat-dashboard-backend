@@ -3,6 +3,7 @@ const app = express();
 const connectDB = require("./Connections/mongoDB");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const nodemailer = require("nodemailer");
 
 app.use(cors());
 app.use(express.json());

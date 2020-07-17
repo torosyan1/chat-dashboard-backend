@@ -2,6 +2,7 @@ const express = require("express");
 const newUser = require("../model/registrationModel");
 const app = express.Router();
 const bcrypt = require("bcrypt");
+const SendEmail = require("../sendEmail/registrationEmail");
 
 app.post("/", async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
@@ -48,6 +49,7 @@ app.post("/", async (req, res) => {
   user.data = new Date();
   let userModel = new newUser(user);
   await userModel.save();
+  SendEmail.sendEmail();
   return res.status(200).json({ msg: "Successfull" });
 });
 
